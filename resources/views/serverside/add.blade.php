@@ -29,16 +29,32 @@
     <div class="mt-3">
     <p class="text-center text-xl font-medium"> Tambah Buku</p>
     <div>
-        <div class="mb-14 ml-48 flex flex-col max-w-[70%] space-y-3">
-            <div class="">Judul</div>
-            <input class=" pl-3 border outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500 rounded-md h-9" type="text">
-            <div class="">Sinopsis</div>
-            <textarea rows="5" class="pl-3 border outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500 rounded-md " type="text"></textarea>
-            <div class="">Gambar</div>
-            <input class="outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500  h-9" type="file">
-            <button class="border bg-green-500 focus:border-black h-10 rounded-lg text-white font-semibold">Tambah</button>
-            <button class="border bg-red-600 focus:border-black h-10 rounded-lg">Batal</button>
-        </div>
+        <form method="post" action="{{url('serverside/master')}}" enctype="multipart/form-data">
+            @csrf
+            <div class="mb-14 ml-48 flex flex-col max-w-[70%] space-y-3">
+                <div class="form-group">
+                    <label for="judul_buku">Judul</label>
+                    <input class=" pl-3 border outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500 rounded-md h-9" type="text" placeholder="masukkan judul" name="judul_buku" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="sinopsis">Sinopsis</label>
+                    <textarea rows="5" class="pl-3 border outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500 rounded-md " type="text" placeholder="masukkan sinopsis" name="sinopsis"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="genre">ID genre</label>
+                    <input class=" pl-3 border outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500 rounded-md h-9" type="text" placeholder="masukkan judul" name="id_genre" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="gambar">Gambar</label>
+                    <input class="outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500  h-9" type="file" name="gambar" accept=".jpeg,.jpg,.png">
+                </div>
+                
+            </div>
+            <button class="border bg-green-500 focus:border-black h-10 rounded-lg text-white font-semibold" type="submit">Tambah Buku</button>
+        </form>
     </div>
     </div>
     

@@ -12,9 +12,9 @@
         <nav>
             <div class="flex flex-row bg-[#5abbc0] w-auto h-20" >
                 <div class="ml-3 text-[30px] font-medium m-auto text-black">PE<span class=" text-blue-600">NA</span></div>
-                <div class="ml-auto"><button class="rounded-sm bg-blue-600 w-20 h-auto hover:bg-white text-[20px] font-medium m-7 text-white hover:text-black">Home</button></div>
-                <div class="-ml-12"><button class="rounded-sm w-20 h-auto hover:bg-white text-[20px] font-medium m-7">About</button></div>
-                <div class="-ml-12"><a class="rounded-sm w-20 h-auto hover:bg-white text-[20px] font-medium m-7" href='admin'>coba</a></div>
+                <div class="ml-auto"><a class="rounded-sm bg-blue-600 w-20 h-auto hover:bg-white text-[20px] font-medium m-7 text-white hover:text-black" href='/'>Home</a></div>
+                <div class="-ml-12"><a class="rounded-sm w-20 h-auto hover:bg-white text-[20px] font-medium m-7">About</a></div>
+                <div class="-ml-12"><a class="rounded-sm w-20 h-auto hover:bg-white text-[20px] font-medium m-7" href='serverside/master'>coba</a></div>
                 <button class="space-y-2 -ml-6 m-7 hover:bg-white" >
                     <div class="w-8 h-0.5 bg-gray-600"></div>
                     <div class="w-8 h-0.5 bg-gray-600"></div>

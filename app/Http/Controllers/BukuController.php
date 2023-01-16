@@ -16,20 +16,20 @@ class BukuController extends Controller
 
     public function create()
     {
-        return view('serverside.create');
+        return view('serverside.add');
     }
 
     public function store(Request $request)
     {
-        $data = new Buku;
-        $data->judul_buku = $request->judul_buku;
-        $data->penulis = $request->penulis;
-        $data->penerbit = $request->penerbit;
-        $data->tahun_terbit = $request->tahun_terbit;
-        $data->id_genre = $request->id_genre;
-        $data->save();
-        return redirect()->route('buku.index');
+        $save = new Buku;
+        $save->judul_buku = request('judul_buku');
+        $save->sinopsis = request('sinopsis');
+        $save->id_genre = request('id_genre');
+        $save->UploadImage();
+        $save->save();
+        return redirect('serverside/master');
     }
+
 
     public function show($id)
     {

@@ -29,7 +29,7 @@
     
     <div>
         <p class="text-center text-xl font-medium"> Data Buku</p>
-
+        <a href="{{url('serverside/add')}}" class="fa-solid fa-plus ">Tambah data</a> 
         <div class="text-center mb-4 mt-2">
             <table class="table-fixed text-center border-collapse mx-auto max-w-screen-xl ">
                 <thead>
@@ -46,7 +46,6 @@
                 <tbody>
                 @foreach ($buku as $data)
                   <tr>
-                  
                     <td class="border-2 border-black">{{$data->id_buku}}</td>
                     <td class="border-2 border-black">{{$data->judul_buku}}</td>
                     <td class="border-2 border-black max-w-md text-left">{{Str::limit($data->sinopsis, 50)}}}</td>
@@ -54,7 +53,6 @@
                         <img src="{{url('./image/book')}}\{{$data->gambar}}" alt="" class="w-20 h-20">
                     </td>
                     <td class="border-2 border-black"> 
-                        <a><i class="fa-solid fa-plus "></i></a> 
                         <a><i class="fa-solid fa-pen"> </i> </a>
                         <a><i class="fa-solid fa-trash-can"></i> </a>
                     </td>
