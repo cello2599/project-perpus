@@ -30,6 +30,17 @@ class BukuController extends Controller
         return redirect('serverside/master');
     }
 
+    public function update(Request $request, $id)
+    {
+        $data = Buku::where('id_buku', $id)->first();
+        $data->judul_buku = $request->judul_buku;
+        $data->sinopsis = $request->sinopsis;
+        $data->id_genre = $request->id_genre;
+        $data->UploadImage();
+        $data->save();
+        return redirect('serverside/master');
+    }
+
 
     public function show($id)
     {
@@ -39,28 +50,25 @@ class BukuController extends Controller
 
     public function edit($id)
     {
-        $data = Buku::where('id_buku', $id)->first();
+        $data['buku'] = Buku::where('id_buku', $id)->first();
         return view('serverside.edit', $data);
     }
 
-    public function update(Request $request, $id)
-    {
-        $data = Buku::where('id_buku', $id)->first();
-        $data->judul_buku = $request->judul_buku;
-        $data->penulis = $request->penulis;
-        $data->penerbit = $request->penerbit;
-        $data->tahun_terbit = $request->tahun_terbit;
-        $data->id_genre = $request->id_genre;
-        $data->save();
-        return redirect()->route('buku.index');
-    }
+    
 
     public function destroy($id)
     {
         $data = Buku::where('id_buku', $id)->first();
         $data->delete();
-        return redirect()->route('buku.index');
+        return redirect('serverside/master');
     }
+
+    function delete(request $request)
+  {
+
+   $data['buku'] = Buku::where('id_buku', $request->id_buku)->delete();
+    return back()->with('success', 'Buku berhasil di hapus');
+  }
 
     public function search(Request $request)
     {

@@ -53,8 +53,8 @@
                         <img src="{{url('./image/book')}}\{{$data->gambar}}" alt="" class="w-20 h-20">
                     </td>
                     <td class="border-2 border-black"> 
-                        <a><i class="fa-solid fa-pen"> </i> </a>
-                        <a><i class="fa-solid fa-trash-can"></i> </a>
+                        <a href="{{url('serverside/edit',$data->id_buku)}}"><i class="fa-solid fa-pen"> </i> </a>
+                        @include('serverside.delete', ['url' => url('serverside/delete', $data->id_buku)])
                     </td>
                   </tr>
                   @endforeach
