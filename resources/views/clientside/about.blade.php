@@ -31,7 +31,7 @@
             <img class="w-screen brightness-50" src="../image/bg-Book1.jpg" alt="Perpustakaan Sederhana"> 
         </div>
         
-        <div class="grid grid-cols-4 gap-4 mt-2 mb-2 ml-2 mr-2 bg-blue-400 rounded-lg border border-black border-2">
+        <div class="grid grid-cols-4 gap-4 mt-2 mb-2 ml-2 mr-2 bg-blue-400 rounded-lg border border-black">
             <div class="w-64 h-24 text-center rounded-lg mt-5 font-bold border border-black">
                 <p>Terdapat</p>
                 <p>10+</p>  

@@ -22,12 +22,10 @@ class ClientsideController extends Controller
     }
 
     //show detail book with id
-   public function detail($id)
+   public function detail(Buku $data)
     {
-        $data['buku'] = Buku::where('id_buku',$id)->first();
-        //join table buku and genre
         $data['buku'] = Buku::join('kategori', 'buku.id_genre', '=', 'kategori.id_genre')->get();
-        return view('clientside/detail',$data);
+        return view('clientside/detail',compact('data'));
     }
 
 

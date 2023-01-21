@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\ClientsideController::class, 'index']);
-Route::get('clientside/detail/{id_buku}', [App\Http\Controllers\ClientsideController::class, 'detail']);
+Route::get('clientside/detail/{data}', [App\Http\Controllers\ClientsideController::class, 'detail']);
 
 
 Route::get('serverside/master', [App\Http\Controllers\BukuController::class, 'index']);

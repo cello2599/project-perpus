@@ -63,7 +63,7 @@
                     </td>
                     <td class="border-2 border-black"> 
                         <a href="{{url('serverside/edit',$data->id_buku)}}"><i class="fa-solid fa-pen"> </i> </a>
-                        @include('serverside.delete', ['url' => url('serverside/delete', $data->id_buku)])
+                        <a><i class="fa-solid fa-trash-can"></i> </a>
                     </td>
                   </tr>
                   @endforeach
