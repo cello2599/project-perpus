@@ -15,7 +15,7 @@
                 <div class="ml-3 text-[30px] font-medium m-auto text-black">PE<span class=" text-blue-600">NA</span></div>
                 <div class="ml-auto mt-6 bg-blue-600 h-9 w-20 rounded-lg  hover:bg-white text-[20px] font-medium mr-14 text-white hover:text-black text-center"><a href='/'>Home</a></div>
                 <div class="-ml-12 mt-6  bg-blue-600 rounded-lg h-9 w-20 hover:bg-white text-[20px] font-medium m-7 text-center mr-14 text-white hover:text-black"><a >About</a></div>
-                <div class="-ml-12 mt-6  bg-blue-600 rounded-lg  h-9 w-20 hover:bg-white text-[20px] font-medium m-7 text-center mr-14 text-white hover:text-black"><a class="" href='serverside/master'>coba</a></div>
+                <div class="-ml-12 mt-6  bg-blue-600 rounded-lg  h-9 w-20 hover:bg-white text-[20px] font-medium m-7 text-center mr-14 text-white hover:text-black"><a class="">coba</a></div>
                 <button class="space-y-2 -ml-6 m-7 hover:bg-white" >
                     <div class="w-8 h-0.5 bg-gray-600"></div>
                     <div class="w-8 h-0.5 bg-gray-600"></div>
@@ -63,7 +63,13 @@
                     </td>
                     <td class="border-2 border-black"> 
                         <a href="{{url('serverside/edit',$data->id_buku)}}"><i class="fa-solid fa-pen"> </i> </a>
-                        <a><i class="fa-solid fa-trash-can"></i> </a>
+                        <form action="{{url('serverside/delete',$data->id_buku)}}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-lg">
+                            <i class="fa-solid fa-trash-can"></i>
+                            </button>
+                        </form>
                     </td>
                   </tr>
                   @endforeach

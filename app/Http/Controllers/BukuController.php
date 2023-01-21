@@ -11,7 +11,7 @@ class BukuController extends Controller
     public function index()
     {
         $data['buku'] = Buku::all();
-        return view('serverside.master', $data);
+        return view('serverside/master', $data);
     }
 
     public function create()
@@ -63,11 +63,10 @@ class BukuController extends Controller
         return redirect('serverside/master');
     }
 
-    function delete(request $request)
+    function delete(Buku $data)
   {
-
-   $data['buku'] = Buku::where('id_buku', $request->id_buku)->delete();
-    return back()->with('success', 'Buku berhasil di hapus');
+    Buku::destroy($data->id_buku);
+    return redirect('serverside/master')->with('success', 'Buku berhasil di hapus');
   }
 
     public function search(Request $request)

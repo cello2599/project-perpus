@@ -29,13 +29,7 @@
 <body>
     
     <div class="">
-        <p class="text-center text-2xl font-medium"> Data Buku</p>
-                <div class="flex">
-          <div class="ml-auto mr-48 py-1 bg-gray-200 h-7 w-24 rounded-lg  hover:bg-gray-400 text-[15px] font-medium text-black  text-center ">
-        <a href="{{url('serverside/add')}}"><i class="fa-solid fa-file-circle-plus"></i> Tambah</a> </div>
-        </div>
-
-        
+        <p class="text-center text-2xl font-medium">ALL BOOKS IN THIS WEB</p>
        
         <div class="text-center mb-4 -mt-3 table-auto p-10">
             <table class="table-fixed text-center border-collapse w-11/12 mx-10">
@@ -45,22 +39,17 @@
                     <th class="border-2 border-black w-30">Judul Buku</th>
                     <th class="border-2 border-black w-30 ">Sinopsis</th>
                     <th class="border-2 border-black">Gambar</th>
-                    <th class="border-2 border-black w-10">Aksi</th>
                   </tr>
                 </thead>
                 
                 <tbody>
                 @foreach ($buku as $data)
                   <tr>
-                    <td class="border-2 border-black">{{$data->id_buku}}</td>
-                    <td class="border-2 border-black">{{$data->judul_buku}}</td>
+                    <td class="border-2 border-black ">{{$data->id_buku}}</td>
+                    <td class="border-2 border-black ">{{$data->judul_buku}}</td>
                     <td class="border-2 border-black max-w-md text-left">{{Str::limit($data->sinopsis, 50)}}}</td>
                     <td class="border-2 border-black">
                         <img src="{{url('./image/book')}}\{{$data->gambar}}" alt="" class="w-20 h-20">
-                    </td>
-                    <td class="border-2 border-black"> 
-                        <a href="{{url('serverside/edit',$data->id_buku)}}"><i class="fa-solid fa-pen"> </i> </a>
-                        <a><i class="fa-solid fa-trash-can"></i> </a>
                     </td>
                   </tr>
                   @endforeach
