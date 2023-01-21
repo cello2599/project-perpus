@@ -29,7 +29,7 @@
         <img class="w-screen brightness-50" src="image/bg-Book1.jpg" alt="Perpustakaan Sederhana"> 
         
     </div>
-    
+    <!-- TEST -->
     
     <div class="mt-9 mr-24 ml-32">
         <p class="font-bold text-[25px]">Book in this web</p> 
