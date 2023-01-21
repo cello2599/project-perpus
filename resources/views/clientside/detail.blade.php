@@ -29,14 +29,12 @@
 <body>
     <div class="w-[60rem] h-[30rem] bg-slate-200 mx-auto mt-5 mb-5 rounded-md">
         <div class="mt-2 ml-2">
-        @foreach ($buku as $data)
-            <p class="text-center font-bold text-xl">{{$data->judul_buku}}</p>
-            <p class=" w-20 h-6">{{$data->nama_kategori}}</p>
+            <p class="text-center font-bold text-xl">{{$buku->judul_buku}}</p>
+            <p class=" w-20 h-6">{{$buku->nama_kategori}}</p>
             <p class="text-center">
             <img src="{{url('./image/book')}}\{{$data->gambar}}" class= "w-3/4" alt="" />
             </p>
-            <p>{{$data->sinopsis}}</p>
-            @endforeach
+            <p>{{$buku->sinopsis}}</p>
         </div>
 
     </div>

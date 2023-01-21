@@ -58,25 +58,28 @@
         <img class="w-screen brightness-50 z-0" src="image/bg-Book1.jpg" alt="Perpustakaan Sederhana"> 
         
     </div>
-    
+    <!-- TEST -->
     
     <div class="mt-9 mr-24 ml-32">
         <p class="font-bold text-[25px]">Book in this web</p> 
         <div class="grid grid-cols-3 gap-4">
             @foreach ($buku as $data)
-            <div class="w-[22rem] h-[40rem] bg-purple-300 mr-1 ml-1 hover:drop-shadow-lg rounded-t-xl p-5 mb-5">
-                <a href= "{{url('clientside/detail',$data->id_buku)}}" class="w-[22rem] h-[40rem] bg-slate-700 mr-1 ml-1 hover:drop-shadow-lg rounded-t-xl"> 
-                    <article>
-                        @if ($data->nama_kategori === 'horor')
-                            <p class="capitalize bg-red-500 w-fit px-2 rounded text-white" >{{$data->nama_kategori}} </p>
-                        @else
-                            <p class="capitalize">{{$data->nama_kategori}} </p>
-                        @endif
-                            <span class="font-bold">{{$data->judul_buku}}</span>
-                            <p class="text-justify">
-                            {{Str::limit($data->sinopsis, 200)}}}
-                            </p>
-                        <img src="{{url('./image/book')}}\{{$data->gambar}}" class= "w-3/4" alt="" />
+            <div class="w-[22rem] h-[40rem] bg-purple-300 mr-1 ml-1 hover:bg-purple-200 transition ease-in-out duration-700 hover:drop-shadow-lg rounded-t-xl p-5 mb-5">
+                <a href= "{{url('clientside/detail', $data->id_buku)}}" class="w-[22rem] h-[40rem] bg-slate-700 mr-1 ml-1 hover:drop-shadow-lg rounded-t-xl"> 
+                <article class="space-y-2 flex flex-col">
+                    @if ($data->nama_kategori === 'horor')
+                        <p class="capitalize bg-gray-700 w-fit px-2 rounded text-white" >{{$data->nama_kategori}} </p>
+                    @elseif ($data->nama_kategori === 'romance')
+                        <p class="capitalize  bg-blue-400 w-fit px-2 rounded text-white">{{$data->nama_kategori}} </p>
+                    @elseif ($data->nama_kategori === 'fantasi')
+                        <p class="capitalize  bg-green-400 w-fit px-2 rounded text-white">{{$data->nama_kategori}} </p>
+                    @endif
+                        <span class="font-bold">{{$data->judul_buku}}</span>
+                        <p class="text-justify">
+                           {{Str::limit($data->sinopsis, 200)}}}  <span class="text-blue-900 hover:underline">Read More</span>
+                        </p> 
+
+                    <img src="{{url('./image/book')}}\{{$data->gambar}}" class= "w-3/4 mx-auto" alt="" />
                     </article>
                 </a> 
             </div>
