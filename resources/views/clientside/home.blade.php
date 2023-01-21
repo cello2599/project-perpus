@@ -10,11 +10,11 @@
 <header>
     <div>
         <nav>
-            <div class="flex flex-row bg-[#5abbc0] w-auto h-20" >
+            <div class="flex flex-row bg-[#5abbc0] w-auto h-20 " >
                 <div class="ml-3 text-[30px] font-medium m-auto text-black">PE<span class=" text-blue-600">NA</span></div>
-                <div class="ml-auto"><a class="rounded-sm bg-blue-600 w-20 h-auto hover:bg-white text-[20px] font-medium m-7 text-white hover:text-black" href='/'>Home</a></div>
-                <div class="-ml-12"><a class="rounded-sm w-20 h-auto hover:bg-white text-[20px] font-medium m-7">About</a></div>
-                <div class="-ml-12"><a class="rounded-sm w-20 h-auto hover:bg-white text-[20px] font-medium m-7" href='serverside/master'>coba</a></div>
+                <div class="ml-auto mt-6 bg-blue-600 h-9 w-20 rounded-lg  hover:bg-white text-[20px] font-medium mr-14 text-white hover:text-black text-center"><a href='/'>Home</a></div>
+                <div class="-ml-12 mt-6  bg-blue-600 rounded-lg h-9 w-20 hover:bg-white text-[20px] font-medium m-7 text-center mr-14 text-white hover:text-black"><a >About</a></div>
+                <div class="-ml-12 mt-6  bg-blue-600 rounded-lg  h-9 w-20 hover:bg-white text-[20px] font-medium m-7 text-center mr-14 text-white hover:text-black"><a class="" href='serverside/master'>coba</a></div>
                 <button class="space-y-2 -ml-6 m-7 hover:bg-white" >
                     <div class="w-8 h-0.5 bg-gray-600"></div>
                     <div class="w-8 h-0.5 bg-gray-600"></div>
@@ -35,19 +35,22 @@
         <p class="font-bold text-[25px]">Book in this web</p> 
         <div class="grid grid-cols-3 gap-4">
             @foreach ($buku as $data)
-            <div class="w-[22rem] h-[40rem] bg-purple-300 mr-1 ml-1 hover:drop-shadow-lg rounded-t-xl p-5 mb-5">
+            <div class="w-[22rem] h-[40rem] bg-purple-300 mr-1 ml-1 hover:bg-purple-200 transition ease-in-out duration-700 hover:drop-shadow-lg rounded-t-xl p-5 mb-5">
                 <a href= "{{url('clientside/detail', $data->id_buku)}}" class="w-[22rem] h-[40rem] bg-slate-700 mr-1 ml-1 hover:drop-shadow-lg rounded-t-xl"> 
-                <article>
+                <article class="space-y-2 flex flex-col">
                     @if ($data->nama_kategori === 'horor')
-                        <p class="capitalize bg-red-500 w-fit px-2 rounded text-white" >{{$data->nama_kategori}} </p>
-                    @else
-                        <p class="capitalize">{{$data->nama_kategori}} </p>
+                        <p class="capitalize bg-gray-700 w-fit px-2 rounded text-white" >{{$data->nama_kategori}} </p>
+                    @elseif ($data->nama_kategori === 'romance')
+                        <p class="capitalize  bg-blue-400 w-fit px-2 rounded text-white">{{$data->nama_kategori}} </p>
+                    @elseif ($data->nama_kategori === 'fantasi')
+                        <p class="capitalize  bg-green-400 w-fit px-2 rounded text-white">{{$data->nama_kategori}} </p>
                     @endif
                         <span class="font-bold">{{$data->judul_buku}}</span>
                         <p class="text-justify">
-                           {{Str::limit($data->sinopsis, 200)}}}
-                        </p>
-                    <img src="{{url('./image/book')}}\{{$data->gambar}}" class= "w-3/4" alt="" />
+                           {{Str::limit($data->sinopsis, 200)}}}  <span class="text-blue-900 hover:underline">Read More</span>
+                        </p> 
+
+                    <img src="{{url('./image/book')}}\{{$data->gambar}}" class= "w-3/4 mx-auto" alt="" />
                     </article>
                     
 

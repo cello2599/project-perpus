@@ -11,10 +11,11 @@
 <header>
     <div>
         <nav>
-            <div class="flex flex-row bg-[#5abbc0] w-auto h-20" >
+        <div class="flex flex-row bg-[#5abbc0] w-auto h-20 " >
                 <div class="ml-3 text-[30px] font-medium m-auto text-black">PE<span class=" text-blue-600">NA</span></div>
-                <div class="ml-auto"><button class="rounded-sm bg-blue-600 w-20 h-auto hover:bg-white text-[20px] font-medium m-7 text-white hover:text-black">Home</button></div>
-                <div class="-ml-12"><button class="rounded-sm w-20 h-auto hover:bg-white text-[20px] font-medium m-7">About</button></div>
+                <div class="ml-auto mt-6 bg-blue-600 h-9 w-20 rounded-lg  hover:bg-white text-[20px] font-medium mr-14 text-white hover:text-black text-center"><a href='/'>Home</a></div>
+                <div class="-ml-12 mt-6  bg-blue-600 rounded-lg h-9 w-20 hover:bg-white text-[20px] font-medium m-7 text-center mr-14 text-white hover:text-black"><a >About</a></div>
+                <div class="-ml-12 mt-6  bg-blue-600 rounded-lg  h-9 w-20 hover:bg-white text-[20px] font-medium m-7 text-center mr-14 text-white hover:text-black"><a class="" href='serverside/master'>coba</a></div>
                 <button class="space-y-2 -ml-6 m-7 hover:bg-white" >
                     <div class="w-8 h-0.5 bg-gray-600"></div>
                     <div class="w-8 h-0.5 bg-gray-600"></div>
@@ -27,19 +28,27 @@
 
 <body>
     
-    <div>
-        <p class="text-center text-xl font-medium"> Data Buku</p>
-        <a href="{{url('serverside/add')}}" class="fa-solid fa-plus ">Tambah data</a> 
-        <div class="text-center mb-4 mt-2">
-            <table class="table-fixed text-center border-collapse mx-auto max-w-screen-xl ">
+    <div class="">
+        <p class="text-center text-2xl font-medium"> Data Buku</p>
+                <div class="flex">
+          <div class="ml-auto mr-48 py-1 bg-gray-200 h-7 w-24 rounded-lg  hover:bg-gray-400 text-[15px] font-medium text-black  text-center ">
+        <a href="{{url('serverside/add')}}"><i class="fa-solid fa-file-circle-plus"></i> Tambah</a> </div>
+        </div>
+
+        <a href="{{url('clientside/list')}}"><i class="fa-solid fa-file-circle-plus"></i> list</a> </div>
+        </div>
+
+        
+       
+        <div class="text-center mb-4 -mt-3 table-auto p-10">
+            <table class="table-fixed text-center border-collapse w-11/12 mx-10">
                 <thead>
                   <tr>
-                    
-                    <th class="border-2 border-black">ID</th>
-                    <th class="border-2 border-black">Judul Buku</th>
-                    <th class="border-2 border-black ">Sinopsis</th>
+                    <th class="border-2 border-black w-5">ID</th>
+                    <th class="border-2 border-black w-30">Judul Buku</th>
+                    <th class="border-2 border-black w-30 ">Sinopsis</th>
                     <th class="border-2 border-black">Gambar</th>
-                    <th class="border-2 border-black">Aksi</th>
+                    <th class="border-2 border-black w-10">Aksi</th>
                   </tr>
                 </thead>
                 
@@ -53,7 +62,7 @@
                         <img src="{{url('./image/book')}}\{{$data->gambar}}" alt="" class="w-20 h-20">
                     </td>
                     <td class="border-2 border-black"> 
-                        <a><i class="fa-solid fa-pen"> </i> </a>
+                        <a href="{{url('serverside/edit',$data->id_buku)}}"><i class="fa-solid fa-pen"> </i> </a>
                         <a><i class="fa-solid fa-trash-can"></i> </a>
                     </td>
                   </tr>

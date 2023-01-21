@@ -14,9 +14,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\ClientsideController::class, 'show']);
-Route::get('about', [App\Http\Controllers\ClientsideController::class, 'about']);
+Route::get('clientside/detail/{id_buku}', [App\Http\Controllers\ClientsideController::class, 'detail']);
 
 
 Route::get('serverside/master', [App\Http\Controllers\BukuController::class, 'index']);
 Route::get('serverside/add', [App\Http\Controllers\BukuController::class, 'create']);
+Route::post('serverside/edit/{id_buku}', [App\Http\Controllers\BukuController::class, 'edit']);
+
 Route::post('serverside/master', [App\Http\Controllers\BukuController::class, 'store']);
