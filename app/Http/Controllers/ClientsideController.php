@@ -9,25 +9,23 @@ class ClientsideController extends Controller
 {
     function index(){
         $data['buku'] = Buku::all();
-        return view('clientside.home',$data);
+        return view('clientside.list',$data);
 
     }
 
 
     function show(){
-        $data['buku'] = Buku::orderBy('id_buku', 'desc')->paginate(10);
+        $data['buku'] = Buku::orderBy('id_buku', 'desc')->paginate(5);
         //join table buku and genre
         $data['buku'] = Buku::join('kategori', 'buku.id_genre', '=', 'kategori.id_genre')->get();
         return view('clientside.home',$data);
     }
 
     //show detail book with id
-   public function detail($id)
+   public function detail(Buku $data)
     {
-        $data['buku'] = Buku::where('id_buku',$id)->first();
-        //join table buku and genre
         $data['buku'] = Buku::join('kategori', 'buku.id_genre', '=', 'kategori.id_genre')->get();
-        return view('clientside/detail',$data);
+        return view('clientside.detail', compact('data'));
     }
 
 
@@ -44,5 +42,6 @@ class ClientsideController extends Controller
         $data['buku'] = Buku::where('id_genre', $request->id)->get();
         return view('clientside.home',$data);
     }
+
     
 }
