@@ -17,6 +17,7 @@ Route::get('/', [App\Http\Controllers\ClientsideController::class, 'show']);
 Route::get('about', [App\Http\Controllers\ClientsideController::class, 'about']);
 Route::get('clientside/detail/{data}', [App\Http\Controllers\ClientsideController::class, 'detail']);
 Route::get('clientside/list', [App\Http\Controllers\ClientsideController::class, 'index']);
+Route::get('contact', [App\Http\Controllers\ClientsideController::class, 'contact']);
 
 Route::get('serverside/master', [App\Http\Controllers\BukuController::class, 'index']);
 Route::get('serverside/add', [App\Http\Controllers\BukuController::class, 'create']);

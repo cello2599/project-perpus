@@ -12,7 +12,7 @@
 
 </head>
 <header>
-<div>
+    <div>
         <nav>
             <div class="flex flex-row bg-[#5abbc0] w-auto h-20 p-6" >
                 <div class="ml-3 text-[30px] font-medium m-auto text-black">PE<span class=" text-blue-600">NA</span></div>
@@ -29,23 +29,15 @@
                  <div x-show="showMenu"> 
                     <nav class="flex flex-col absolute z-50">
                             <a href="serverside/master" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
-                                Login
-                                <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
+                            Login
+                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
                             </a>
-                            <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
-                            Genre
+                            <a href="/contact" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                            Contact Us
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
                             </a>
                             <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
                             Daftar Buku
-                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
-                            </a>
-                            <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
-                            
-                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
-                            </a>
-                            <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
-                            bsx
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
                             </a>
                     </nav>
@@ -57,42 +49,115 @@
 </header>
 
 <body>
-    <div class="">
-        <div>
-            <img class="w-screen brightness-50" src="../image/bg-Book1.jpg" alt="Perpustakaan Sederhana"> 
+        <div class="py-20" >
+        <img class="w-screen brightness-50 z-0 -mt-20" src="image/bg-Book1.jpg" alt="Perpustakaan Sederhana">
+          <div class="container mx-auto px-6 -mt-60 absolute">
+            <h2 class="text-4xl font-bold mb-2 text-white">
+              Perpustakaan Sederhana!
+            </h2>
+            <h3 class="text-2xl mb-8 text-gray-200">
+              Buku adalah jendela dunia untuk mencerdaskan wawasan.
+            </h3>
+            <a href="/" type="button" class="bg-lime-500 font-bold rounded-full py-4 px-8 shadow-lg uppercase tracking-wider">
+              More Action
+            </a>
+          </div>
         </div>
-        
-        <div class="grid grid-cols-4 gap-4  bg-blue-400 rounded-lg border border-black p-4 ">
-            <div class="w-64 h-24 text-center rounded-lg p-2  font-bold border ml-7 border-white bg-slate-500">
-                <p>Terdapat</p>
-                <p>10+</p>  
-                <p>Buku</p></div>
-            <div class="w-64 h-24 text-center rounded-lg p-2  font-bold border ml-7 border-black">
-                <div><p>Terdapat</p>
-                <p>3+</p>  
-                <p>Genre Buku</p></div></div>
-            <div class="w-64 h-24 text-center rounded-lg p-2 font-bold border ml-7 border-white bg-slate-500">
-                <p>Terdapat</p>
-                <p>5+</p>  
-                <p>Penulis</p></div>
-            <div class="w-64 h-24 text-center rounded-lg p-2  font-bold border ml-7 border-black">
-                <p>Terdapat</p>
-                <p>2+</p>  
-                <p>Penerbit</p></div>
-        </div>
-
-        <div class="grid grid-cols-3 gap-4  bg-blue-400 rounded-lg border border-black p-4 ">
-            
-            <div class="w-64 h-24 text-center rounded-lg p-2  font-bold border ml-7 border-white bg-slate-500">
-            <i class="fa-brands fa-instagram"></i></div>
-            <div class="w-64 h-24 text-center rounded-lg p-2  font-bold border ml-7 border-black">
-            <i class="fa-brands fa-whatsapp"></i></div>
-            <div class="w-64 h-24 text-center rounded-lg p-2 font-bold border ml-7 border-white bg-slate-500">
-            <i class="fa-brands fa-youtube"></i></div>
-            
-        </div>
-        
-    </div>
+        <!-- Features -->
+        <section class="container mx-auto px-6 p-10">
+          <h2 class="text-4xl font-bold text-center text-gray-800 -mt-20 mb-8">
+            About PeNa
+          </h2>
+          <div class="flex items-center flex-wrap mb-20">
+            <div class="w-full md:w-1/2">
+              <h4 class="text-3xl text-gray-800 font-bold mb-3">
+                Easy to Use
+              </h4>
+              <p class="text-gray-600 mb-8">
+               Platform perpustakaan online yang memudahkan pengguna untuk mencari buku yang diinginkan.
+               dan juga pengguna dapat meminjam buku secara online tanpa harus datang ke perpustakaan.
+              </p>
+            </div>
+            <div class="w-64 h-64 ml-40">
+              <img src="image/easytouse.png" alt="Monitoring" />
+            </div>
+          </div>
+          <div class="flex items-center flex-wrap mb-40">
+            <div class="w-64 h-64 ml-40">
+              <img src="image/manybook.png" alt="Reporting" />
+            </div>
+            <div class="w-full md:w-1/2 pl-10">
+              <h4 class="text-3xl text-gray-800 font-bold mb-3">
+                Available Many Books
+              </h4>
+              <p class="text-gray-600 mb-8">
+                Berisi berbagai macam buku dari seluruh genre, dengan banyaknya buku yang tersedia di perpustakaan ini,
+                pengguna dapat memilih buku yang diinginkan. cocok untuk anak-anak, remaja, dan dewasa.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center flex-wrap mb-20">
+            <div class="w-full md:w-1/2">
+              <h4 class="text-3xl text-gray-800 font-bold mb-3">
+                Up to Date
+              </h4>
+              <p class="text-gray-600 mb-8">
+                Selalu update dengan buku-buku terbaru yang diterbitkan oleh penerbit. Buku yang tersedia di perpustakaan ini
+                merupakan buku asli yang langsung dari penenerbit dan bukan buku bajakan. tersedia juga buku-buku lama yang 
+                jarang ditemukan di perpustakaan lain.
+              </p>
+            </div>
+            <div class="w-72 h-72 ml-40">
+              <img src="image/update.png" alt="Syncing" />
+            </div>
+          </div>
+        </section>
+        <!-- Testimonials -->
+        <section class="bg-gray-800">
+          <div class="container mx-auto px-6 py-20">
+            <h2 class="text-4xl font-bold text-center text-gray-400 mb-20">
+              Testimonials from our users
+            </h2>
+            <div class="flex flex-wrap">
+              <div class="w-full md:w-1/3 px-2 mb-4">
+                <div class="bg-white rounded shadow py-2">
+                  <p class="text-gray-800 text-base px-6 mb-5">
+                    Memudahkan saya untuk mencari buku, dan juga meminjam
+                    buku secara online tanpa harus datang ke perpustakaan.
+                    sehingga saya bisa melakukan peminjaman kapanpun.
+                  </p>
+                  <p class="text-gray-500 text-xs md:text-sm px-6">
+                    Marcello Athapary
+                  </p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/3 px-2 mb-4">
+                <div class="bg-white rounded shadow py-2">
+                  <p class="text-gray-800 text-base px-6 mb-5">
+                    Koleksi buku yang tersedia di perpustakaan ini sangat banyak, sehingga
+                    saya bisa meminjam buku yang susah untuk ditemukan. Buku-buku yang 
+                    tersedia juga sangat update. 
+                  </p>
+                  <p class="text-gray-500 text-xs md:text-sm px-6">
+                    Andika Dwi
+                  </p>
+                </div>
+              </div>
+              <div class="w-full md:w-1/3 px-2 mb-4">
+                <div class="bg-white rounded shadow py-2">
+                  <p class="text-gray-800 text-base px-6 mb-5">
+                    Keaslian buku yang ada sangat terjamin, sehingga sangat minim untuk
+                    ditemukan buku-buku yang tidak asli atau bajakan. Memudahkan saya mencari
+                    referensi buku yang saya butuhkan.
+                  </p>
+                  <p class="text-gray-500 text-xs md:text-sm px-6">
+                    Indra Kusuma
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
     
 </body>
 

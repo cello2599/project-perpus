@@ -33,6 +33,10 @@ class ClientsideController extends Controller
         return view('clientside.about');
     }
 
+    function contact(){
+        return view('clientside.contact');
+    }
+
     function search(request $request){
         $data['buku'] = Buku::where('judul_buku', 'like', "%".$request->search."%")->get();
         return view('clientside.home',$data);
