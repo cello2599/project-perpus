@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [App\Http\Controllers\ClientsideController::class, 'show']);
+Route::get('about', [App\Http\Controllers\ClientsideController::class, 'about']);
 Route::get('clientside/detail/{data}', [App\Http\Controllers\ClientsideController::class, 'detail']);
 Route::get('clientside/list', [App\Http\Controllers\ClientsideController::class, 'index']);
 
