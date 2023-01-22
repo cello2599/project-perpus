@@ -94,8 +94,6 @@
                             <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-lg inline-table mt-2 ">
                             <i class="fa-solid fa-trash-can"></i>
                             </button>
-
-                            <a href="clientside/list"><i class="fa-solid fa-angles-right text-black py-2 px-4 rounded-lg mt-2"> </i> </a>
                         </form>
                     </td>
                   </tr>

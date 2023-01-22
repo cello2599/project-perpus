@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
     function login()
     {
-        return view('login');
+        return view('clientside.login');
     }
     function registrasi()
     {
@@ -33,15 +35,25 @@ class AuthController extends Controller
 
     function loginProcess()
     {
-        if (Auth::attempt(['username' => request('username'), 'password' => request('password')])) {
-
-            return redirect('admin/beranda')->with('success', 'Selamat datang admin Coffee Shop');
-           
+        //get data from model user
+        $user = User::where('nama', request('nama'))->first();
+        //check if user exist
+        if ($user) {
+            //check if password is correct
+            if (Auth::attempt(['nama' => request('nama'), 'password' => request('password')])) {
+                //if password is correct, redirect to beranda
+                return redirect('admin/serverside/master');
+            } else {
+                //if password is incorrect, redirect to login
+                return redirect('login')->with('error', 'Password salah');
+            }
         } else {
-            return back()->with('danger', 'Login gagal. Silahkan cek username dan password anda!');
+            //if user not exist, redirect to login
+            return redirect('login')->with('error', 'Username tidak ditemukan');
         }
         
     }
+
 
     function logout()
     {

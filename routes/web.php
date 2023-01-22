@@ -17,6 +17,13 @@ Route::get('/', [App\Http\Controllers\ClientsideController::class, 'show']);
 Route::get('about', [App\Http\Controllers\ClientsideController::class, 'about']);
 Route::get('clientside/detail/{data}', [App\Http\Controllers\ClientsideController::class, 'detail']);
 Route::get('clientside/list', [App\Http\Controllers\ClientsideController::class, 'index']);
+Route::get('clientside/list2', [App\Http\Controllers\ClientsideController::class, 'list2']);
+
+Route::get('login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
+
+
+Route::prefix('admin')->middleware('auth')->group(function () {
+
 
 Route::get('serverside/master', [App\Http\Controllers\BukuController::class, 'index']);
 Route::get('serverside/add', [App\Http\Controllers\BukuController::class, 'create']);
@@ -24,3 +31,5 @@ Route::post('serverside/master', [App\Http\Controllers\BukuController::class, 's
 Route::get('serverside/edit/{id_buku}', [App\Http\Controllers\BukuController::class, 'edit']);
 Route::put('serverside/edit/store/{id_buku}', [App\Http\Controllers\BukuController::class, 'update']);
 Route::delete('serverside/delete/{data}', [App\Http\Controllers\BukuController::class, 'delete']);
+
+});

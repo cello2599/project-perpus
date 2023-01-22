@@ -33,6 +33,13 @@ class ClientsideController extends Controller
         return view('clientside.about');
     }
 
+    function list2(){
+        $data['buku'] = Buku::all();
+        //join table buku and genre
+        $data['buku'] = Buku::join('kategori', 'buku.id_genre', '=', 'kategori.id_genre')->get();
+        return view('clientside.list2',$data);
+    }
+
     function search(request $request){
         $data['buku'] = Buku::where('judul_buku', 'like', "%".$request->search."%")->get();
         return view('clientside.home',$data);
