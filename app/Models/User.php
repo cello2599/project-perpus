@@ -9,7 +9,8 @@ use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
-{
+{   
+    $protected $table = 'admin';
     use HasApiTokens, HasFactory, Notifiable;
 
     /**
