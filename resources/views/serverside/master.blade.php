@@ -5,22 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/style.css">
     <link rel="stylesheet" type="text/css" href="../assets/fontawesome/css/all.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js" defer></script>
     <title>Pena</title>
 
 </head>
 <header>
-    <div>
+<div>
         <nav>
-        <div class="flex flex-row bg-[#5abbc0] w-auto h-20 " >
+            <div class="flex flex-row bg-[#5abbc0] w-auto h-20 p-6" >
                 <div class="ml-3 text-[30px] font-medium m-auto text-black">PE<span class=" text-blue-600">NA</span></div>
-                <div class="ml-auto mt-6 bg-blue-600 h-9 w-20 rounded-lg  hover:bg-white text-[20px] font-medium mr-14 text-white hover:text-black text-center"><a href='/'>Home</a></div>
-                <div class="-ml-12 mt-6  bg-blue-600 rounded-lg h-9 w-20 hover:bg-white text-[20px] font-medium m-7 text-center mr-14 text-white hover:text-black"><a >About</a></div>
-                <div class="-ml-12 mt-6  bg-blue-600 rounded-lg  h-9 w-20 hover:bg-white text-[20px] font-medium m-7 text-center mr-14 text-white hover:text-black"><a class="">coba</a></div>
-                <button class="space-y-2 -ml-6 m-7 hover:bg-white" >
-                    <div class="w-8 h-0.5 bg-gray-600"></div>
-                    <div class="w-8 h-0.5 bg-gray-600"></div>
-                    <div class="w-8 h-0.5 bg-gray-600"></div>
-                </button>
+                <div class="ml-auto"><a class="p-3 rounded-sm bg-transparent w-20 h-auto hover:bg-white text-[20px] font-medium m-7 text-black hover:text-black " href='/'>Home</a></div>
+                <div class="-ml-12"><a class=" p-3 rounded-sm w-20 h-auto hover:bg-white text-[20px] font-medium m-7" >About</a></div>
+              <div class="" x-data="{showMenu : false}">
+                    <button @click.prevent="showMenu = !showMenu " class="px-2 py-4 flex justify-between bg-blue-500 text-white -mt-3">
+                        <svg x-show="!showMenu" class="w-6 h-6 mr-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                            <path d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                        <svg x-show="showMenu" class="w-6 h-6 mr-2" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"></path></svg>
+                         Menu
+                    </button>
+                 <div x-show="showMenu"> 
+                    <nav class="flex flex-col absolute z-50">
+                            <a href="serverside/master" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                                Login
+                                <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
+                            </a>
+                            <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                            Genre
+                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
+                            </a>
+                            <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                            Daftar Buku
+                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
+                            </a>
+                            <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                            
+                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
+                            </a>
+                            <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                            bsx
+                            <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
+                            </a>
+                    </nav>
+                 </div>
+              </div>
             </div>
         </nav>
     </div>
@@ -35,20 +63,17 @@
         <a href="{{url('serverside/add')}}"><i class="fa-solid fa-file-circle-plus"></i> Tambah</a> </div>
         </div>
 
-        <a href="{{url('clientside/list')}}"><i class="fa-solid fa-file-circle-plus"></i> list</a> </div>
-        </div>
-
-        
+             
        
         <div class="text-center mb-4 -mt-3 table-auto p-10">
-            <table class="table-fixed text-center border-collapse w-11/12 mx-10">
+            <table class="table-fixed text-center border-collapse w-[80%] mx-auto">
                 <thead>
                   <tr>
-                    <th class="border-2 border-black w-5">ID</th>
-                    <th class="border-2 border-black w-30">Judul Buku</th>
+                    <th class="border-2 border-black w-14">Genre</th>
+                    <th class="border-2 border-black w-36">Judul Buku</th>
                     <th class="border-2 border-black w-30 ">Sinopsis</th>
-                    <th class="border-2 border-black">Gambar</th>
-                    <th class="border-2 border-black w-10">Aksi</th>
+                    <th class="border-2 border-black w-20">Gambar</th>
+                    <th class="border-2 border-black w-16">Aksi</th>
                   </tr>
                 </thead>
                 
@@ -57,18 +82,20 @@
                   <tr>
                     <td class="border-2 border-black">{{$data->id_buku}}</td>
                     <td class="border-2 border-black">{{$data->judul_buku}}</td>
-                    <td class="border-2 border-black max-w-md text-left">{{Str::limit($data->sinopsis, 50)}}}</td>
+                    <td class="border-2 border-black max-w-md text-left">{{Str::limit($data->sinopsis, 150)}}}</td>
                     <td class="border-2 border-black">
-                        <img src="{{url('./image/book')}}\{{$data->gambar}}" alt="" class="w-20 h-20">
+                        <img src="{{url('./image/book')}}\{{$data->gambar}}" alt="" class="w-20 h-20 mx-auto">
                     </td>
                     <td class="border-2 border-black"> 
-                        <a href="{{url('serverside/edit',$data->id_buku)}}"><i class="fa-solid fa-pen"> </i> </a>
-                        <form action="{{url('serverside/delete',$data->id_buku)}}" method="post">
+                        <a href="{{url('serverside/edit',$data->id_buku)}}"><i class="fa-solid fa-pen bg-green-600 text-white py-2 px-4 rounded-lg mt-2"> </i> </a>
+                        <form action="{{url('serverside/delete',$data->id_buku)}}" method="post" >
                             @csrf
                             @method('delete')
-                            <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-lg">
+                            <button type="submit" class="bg-red-500 text-white py-2 px-4 rounded-lg inline-table mt-2 ">
                             <i class="fa-solid fa-trash-can"></i>
                             </button>
+
+                            <a href="clientside/list"><i class="fa-solid fa-angles-right text-black py-2 px-4 rounded-lg mt-2"> </i> </a>
                         </form>
                     </td>
                   </tr>

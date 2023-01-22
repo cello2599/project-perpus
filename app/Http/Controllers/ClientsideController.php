@@ -25,7 +25,7 @@ class ClientsideController extends Controller
    public function detail(Buku $data)
     {
         $data['buku'] = Buku::join('kategori', 'buku.id_genre', '=', 'kategori.id_genre')->get();
-        return view('clientside.detail', compact('data'));
+        return view('clientside/detail',compact('data'));
     }
 
 
