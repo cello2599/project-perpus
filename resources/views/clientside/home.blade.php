@@ -31,8 +31,8 @@
                                 Login
                                 <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
                             </a>
-                            <a href="#" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
-                            Genre
+                            <a href="/contact" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
+                            Contact Us
                             <svg class="w-6 h-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 5l7 7-7 7"></path></svg>    
                             </a>
                             <a href="clientside/list" class="px-2 py-4 text-blue-600 bg-white flex justify-between w-full border-b border-blue-900 hover:text-blue-100 hover:bg-blue-600">
@@ -49,8 +49,15 @@
 </header>
 <body class="bg-slate-100">
     <div class="">
-        <img class="w-screen brightness-50 z-0" src="image/bg-Book1.jpg" alt="Perpustakaan Sederhana"> 
-        
+        <img class="w-screen brightness-50 z-0" src="image/bg-Book1.jpg" alt="Perpustakaan Sederhana">
+        <div class="container mx-auto px-6 -mt-60 absolute">
+            <h2 class="text-4xl font-bold mb-2 text-white">
+              Perpustakaan Sederhana!
+            </h2>
+            <h3 class="text-2xl mb-8 text-gray-200">
+              Buku adalah jendela dunia untuk mencerdaskan wawasan.
+            </h3>
+         </div>
     </div>
     <!-- TEST -->
     
