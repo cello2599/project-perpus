@@ -33,8 +33,11 @@ class ClientsideController extends Controller
         return view('clientside.about');
     }
 
-    function contact(){
-        return view('clientside.contact');
+    function list2(){
+        $data['buku'] = Buku::all();
+        //join table buku and genre
+        $data['buku'] = Buku::join('kategori', 'buku.id_genre', '=', 'kategori.id_genre')->get();
+        return view('clientside.list2',$data);
     }
 
     function search(request $request){
