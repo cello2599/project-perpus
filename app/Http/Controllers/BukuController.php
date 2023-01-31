@@ -5,19 +5,24 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Buku;
+use App\Models\kategori;
 
 class BukuController extends Controller
 {
     public function index()
     {
         $data['buku'] = Buku::all();
+        //join table genre
+        $data['buku'] = Buku::join('kategori', 'kategori.id_genre', '=', 'buku.id_genre')->get();
         return view('serverside/master', $data);
     }
 
     public function create()
-    {
-        return view('serverside.add');
+    {   
+        $data['kategori'] = kategori::all();
+        return view('serverside.add', $data);
     }
+
 
     public function store(Request $request)
     {
@@ -27,7 +32,7 @@ class BukuController extends Controller
         $save->id_genre = request('id_genre');
         $save->UploadImage();
         $save->save();
-        return redirect('serverside/master');
+        return redirect('serverside/master'); 
     }
 
     public function update(Request $request, $id)

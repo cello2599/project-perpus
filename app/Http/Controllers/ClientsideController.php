@@ -33,6 +33,11 @@ class ClientsideController extends Controller
         return view('clientside.about');
     }
 
+    
+    function contact(){
+        return view('clientside.contact');
+    }
+
     function list2(){
         $data['buku'] = Buku::all();
         //join table buku and genre
@@ -40,15 +45,6 @@ class ClientsideController extends Controller
         return view('clientside.list2',$data);
     }
 
-    function search(request $request){
-        $data['buku'] = Buku::where('judul_buku', 'like', "%".$request->search."%")->get();
-        return view('clientside.home',$data);
-    }
-
-    function genre(request $request){
-        $data['buku'] = Buku::where('id_genre', $request->id)->get();
-        return view('clientside.home',$data);
-    }
 
     
 }

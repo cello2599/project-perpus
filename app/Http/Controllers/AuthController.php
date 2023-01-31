@@ -28,30 +28,50 @@ class AuthController extends Controller
     }
     function beranda()
     {
-        return view('serverside.beranda');
+        return view('serverside/master');
     }
     
-   
 
-    function loginProcess()
+    //post login
+    // public function postlogin()
+    // { 
+
+    //  if (Auth::guard('admin')->attempt(['nama' => request('nama'), 'password' => request('password')])) {
+    //         //check if password is correct
+    //        //return redirect('sudah');
+    //        dd("berhasil");
+    //     }
+    //     else {
+    //         //if user not exist, redirect to login
+    //         return back()->with('error', 'Username tidak ditemukan');
+            
+    //     }
+    // }
+
+    function postlogin(Request $request)
     {
+        //validate form
+        $request->validate([
+            'nama' => 'required',
+            'password' => 'required'
+        ]);
         //get data from model user
-        $user = User::where('nama', request('nama'))->first();
+        $user['admin'] = User::where('nama', request('nama'))->first();
         //check if user exist
         if ($user) {
             //check if password is correct
             if (Auth::attempt(['nama' => request('nama'), 'password' => request('password')])) {
                 //if password is correct, redirect to beranda
-                return redirect('admin/serverside/master');
+                return redirect('serverside/master');
             } else {
                 //if password is incorrect, redirect to login
                 return redirect('login')->with('error', 'Password salah');
             }
         } else {
             //if user not exist, redirect to login
-            return redirect('login')->with('error', 'Username tidak ditemukan');
+            return back()->with('error', 'Username tidak ditemukan');
+            
         }
-        
     }
 
 
