@@ -18,9 +18,12 @@ class Buku extends Model
       
         if (request()->hasFile('gambar')) {
             $gambar = request()->file('gambar');
-            $destination = "./image/book/";
-            $randomStr = Str::random(5);
-            $filename = "book-" . time() . "-"  . $randomStr . "."  . $gambar->extension();
+            $destination = "/public/image/book";
+            $namagambar= $gambar->getClientOriginalName();
+            //$randomStr = Str::random(5);
+            //$filename = "book-" . time() . "-"  . $randomStr . "."  . $gambar->extension();
+            //$filename = $namagambar . $gambar->extension();
+            $filename = $namagambar;
             $url = $gambar->storeAs($destination, $filename);
             $this->gambar = $filename;
             $this->save();

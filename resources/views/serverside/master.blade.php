@@ -50,8 +50,10 @@
     <div class="">
         <p class="text-center text-2xl font-medium"> Data Buku</p>
                 <div class="flex">
-          <div class="ml-auto mr-48 py-1 bg-gray-200 h-7 w-24 rounded-lg  hover:bg-gray-400 text-[15px] font-medium text-black  text-center ">
+          <div class="ml-auto mr-1 py-1 bg-gray-200 h-7 w-24 rounded-lg  hover:bg-gray-400 text-[15px] font-medium text-black  text-center ">
         <a href="{{url('serverside/add')}}"><i class="fa-solid fa-file-circle-plus"></i> Tambah</a> </div>
+        <div class=" mr-48 py-1 bg-gray-200 h-7 w-24 rounded-lg  hover:bg-gray-400 text-[15px] font-medium text-black  text-center ">
+        <a href="{{url('logout')}}"><i class="fa-solid fa-right-from-bracket"></i> LogOut</a> </div>
         </div>
 
              
@@ -60,7 +62,7 @@
             <table class="table-fixed text-center border-collapse w-[80%] mx-auto">
                 <thead>
                   <tr>
-                    <th class="border-2 border-black w-14">Genre</th>
+                    <th class="border-2 border-black w-16">Genre</th>
                     <th class="border-2 border-black w-36">Judul Buku</th>
                     <th class="border-2 border-black w-30 ">Sinopsis</th>
                     <th class="border-2 border-black w-20">Gambar</th>
@@ -71,7 +73,7 @@
                 <tbody>
                 @foreach ($buku as $data)
                   <tr>
-                    <td class="border-2 border-black">{{$data->id_buku}}</td>
+                    <td class="border-2 border-black">{{$data->nama_kategori}}</td>
                     <td class="border-2 border-black">{{$data->judul_buku}}</td>
                     <td class="border-2 border-black max-w-md text-left">{{Str::limit($data->sinopsis, 150)}}}</td>
                     <td class="border-2 border-black">
@@ -111,7 +113,7 @@
         </div>
       </div>
     
-</body>
+</body> 
 
 <footer>
     <div class="flex flex-row bg-[#5abbc0] w-auto h-36 " >

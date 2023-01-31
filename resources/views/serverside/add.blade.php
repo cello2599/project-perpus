@@ -29,7 +29,7 @@
 
     
 
-    <div class="grid grid-cols-3 gap-4 mt-5">
+    <div class="grid grid-cols-3 gap-4 mt-5">  
            
             <div class="w-[22rem] h-[32rem] p-6 ml-60 hover:drop-shadow-lg rounded-md border-purple-800 border mb-5 text-center">
                 <div class="mt-1 ">
@@ -78,13 +78,12 @@
                 </thead>
                 
                 <tbody>
-               
+                    @foreach($kategori as $data)
                   <tr>
-                    <td class="border-[1px] border-black"> ID1</td>
-                    <td class="border-[1px] border-black">Nama1</td>
-                   
+                    <td class="border-[1px] border-black">{{$data->id_genre}}</td>
+                    <td class="border-[1px] border-black">{{$data->nama_kategori}}</td>
                   </tr>
-            
+                    @endforeach
                 </tbody>
                 
               </table>
@@ -103,7 +102,7 @@
     <div class="flex flex-row bg-[#5abbc0] w-auto h-36 " >
 
         <div class="flex flex-row bg-[5a7e85] w-[70rem] h-12 m-auto"  >
-            <div class="m-auto text-white">Copyright © 2023, HBO Max</div> 
+            <div class="m-auto text-white">Copyright © 2023, All Rights Reserved</div> 
         </div>
 
         </div>

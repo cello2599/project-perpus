@@ -32,12 +32,17 @@
         </div>
         
         <div class="mb-14 ml-48 flex flex-col max-w-[70%] space-y-3">
-            <div class="">Username</div>
-            <input class=" pl-3 border outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500 rounded-md h-9" type="email">
-            <div class="">Password</div>
-            <input class="pl-3 border outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500 rounded-md h-9" type="password">
-            <button class="border bg-green-500 focus:border-black h-10 rounded-lg">Login</button>
-            <button class="border bg-red-600 focus:border-black h-10 rounded-lg">Daftar</button>
+            <form id="form" action="{{url('postlogin')}}" method="post">
+                @csrf
+                <div class="">Username</div>
+                <input class=" pl-3 border outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500 rounded-md h-9" type="text"
+                id="nama" name="nama" autofocus required>
+                <div class="">Password</div>
+                <input class=" pl-3 border outline-none text-gray-500 focus:text-gray-700 duration-300 transition ease-in-out focus:border-gray-500 rounded-md h-9" type="password"
+                id="password" name="password" required>
+
+                <button class="border -mt-6 bg-green-500 focus:border-black h-10 rounded-lg text-white font-semibold" type="submit">Login</button>
+            </form>
         </div>
     </div>
 </body>
@@ -54,3 +59,4 @@
 </footer>
 
 </html>
+
